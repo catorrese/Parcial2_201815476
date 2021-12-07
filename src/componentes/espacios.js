@@ -195,7 +195,9 @@ function Espacios() {
     arcs.append("path")
         .attr("fill", function(d, i) {
             return color(i);
-        })
+        }).on("mouseover",function (d) {
+          console.log(d3.select(this)._groups[0]);
+       })
         .attr("d", arc);
 
        var tooltip = d3.select("body")
